@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Javascript Hoisting</h3>
+    <script>
+        // Hoisting Day 1
+       call()  //Hello Javascript
+        function call(){
+            console.log("Hello Javascript")
+        }
+        call() //Hello Javascript
+
+        // --------------------
+        console.log(a); //undefined
+        var a = "If we call a variable before it is declared we will get a undefined"
+        console.log(a); //If we call a variable before it is declared we will get a undefined 
+        //--------------------------
+       // console.log(b) //error //first comment this line no 23 and check the output
+        let b = "Javascript";
+        console.log(b) //Javascript
+        //-----------------
+        repeat(); //First print this
+        //repeatonce(); //reference error
+        function repeat(){
+
+            repeatonce(); //second function
+            console.log("First print this");
+
+            function repeatonce(){
+                console.log("second function");
+            }
+        } 
+
+        //------------------
+        console.log(myName); //undefined
+        var myName = "sai teja";
+        console.log(myName); // sai teja
+        console.log(Name); //Name is not defined
+    </script>
+</body>
+</html>
+
+
