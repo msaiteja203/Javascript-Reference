@@ -53,6 +53,38 @@
        // let d  = "We can update the let keyword"
         console.log(d);
 
+        ///Array methods
+        //Remove duplicates from array
+        let array1 = [1,2,1,2,3,4,11,2,3,43,34,3,2,3,4,5,622,22,11,43,622];
+
+        function removedDup(array1){
+            return array1.filter((ele, ind) =>
+            array1.indexOf(ele)!== ind)
+        }
+        console.log(removedDup(array1)); //it will return the repeated values in output
+
+
+        function removeDup(array1){
+            return array1.filter((elel, inds) =>
+        array1.indexOf(elel) == inds);
+        }
+        console.log(removeDup(array1)); //it will return the remaining values after duplicates removed
+        
+        //reverse string
+        function revStr(str){
+            const string =  str.split('').reverse().join(" ");
+            console.log(string)
+        }
+        revStr("Divya Venkata Sai Teja M");
+
+        //removes elements from array
+
+        let arr2 = [1,2,3,4,5,6,7,5,4,3,2,1,2,1,1,1,1];
+        removeEle = 1;
+        let result =  arr2.filter((item) => 
+    item !== removeEle);
+    console.log(result);
+
     </script>
 </body>
 </html>
