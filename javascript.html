@@ -88,11 +88,49 @@
     //print pattern
     for(let i=0; i<=4; i++){
         for(j=1; j<=i;j++){
-            console.log(j + " ");
+            document.write(i + " ");
         }
-        console.log("<br/>")
+        document.write("<br/>")
     }
-    </script>
+
+    //output
+/* 1
+2 2
+3 3 3
+4 4 4 4
+ */
+
+ const n = 5;
+for (let i = 1; i <= n; i++) {
+    let str = '';
+    for (let j = 1; j <= i; j++) {
+        str += j + ' ';
+    }
+    console.log(str);
+}
+/* 
+    1
+1 2
+1 2 3
+1 2 3 4 
+1 2 3 4 5*/
+    //print biggest number
+    let arr3 = [10,22,3,4,0,5,6,7,8,99,8,7,100,4];
+   const maxVal = (arr3) => {
+    return arr3.reduce(function(prev, cur){
+        return prev>cur?prev:cur;
+    })
+   }
+   console.log(maxVal(arr3));
+
+   //print least number
+   const minVal = (arr3) => {
+    return arr3.reduce(function(prev, cur){
+        return prev < cur? prev:cur;
+    })
+   }
+   console.log(minVal(arr3));
+   </script>
 </body>
 </html>
 
