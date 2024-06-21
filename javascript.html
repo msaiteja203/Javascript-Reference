@@ -206,7 +206,7 @@ for(let i in srno){
     console.log(i);
 }
 
-//for of loop
+//for of loop it will calls every item
 const srnoo = ["sai","teja","divya","venkatesh","chandu","Vamshi"];
 for(let jj of srnoo){
     console.log(jj);
@@ -226,7 +226,7 @@ for (let char of str) {
   console.log(char);
 }
 
-//For each loop
+//For each loop (it will calls every array item)
 const numbers = [1, 2, 3, 4, 5];
 
 numbers.forEach(number => {
@@ -235,7 +235,35 @@ numbers.forEach(number => {
 
 ///this.el
 //this. return window element
+
+//Spread operator 
+
+let arrayione = "Sai Teja  M";
+let arraytwo = "Software Engineer";
+console.log(...arrayione, ...arraytwo);
+console.log(arrayione+arraytwo);
+
+//Rest Operator
+let destructr = [4, 5, 55, 66, 77, 88, 99, 19];
+let [p,q,r, ...rest] = destructr;
+console.log(p,q,r, ...rest);
+//Destructuring
+
+let destruct = [4, 5];
+let [aaaa, bbbb] = destruct;
+console.log(aaaa, bbbb)
    </script>
+
+   <!-- 
+Spread operator                                                                Rest Opearator
+Uses three dots (...) before an iterable object	                         Uses three dots (...) before a variable name
+Use Case	Used to expand elements of an iterable	                    Used to gather remaining elements into an array
+Context	Typically used in function calls or array literals	             Typically used in function parameters or array destructuring
+Example	const arr = [...array1, ...array2];	                              const [first, second, ...rest] = [1, 2, 3, 4, 5];
+Use in Function Calls	myFunction(...args);	                                myFunction(first, second, ...rest) {...}
+Use in Array Literals	[...array1, ...array2];                    	[first, second, ...rest] = [1, 2, 3, 4, 5];
+
+   -->
 </body>
 </html>
 
