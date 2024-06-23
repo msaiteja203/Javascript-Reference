@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .tablebdy{
+            border: 2px solid black;
+        }
+    </style>
 </head>
 <body>
     <h3>Javascript Hoisting</h3>
+    <button onclick="Addfunction()">Simple Function</button>
+
+    <!-- //When i will click on add table it should come with table rows columns and table heading -->
+<button onclick="Table()">Add Table</button>
     <script>
+function Addfunction(){
+    console.log("Sai Teja M");
+    document.write("SAI TEJA M");
+    alert("SAI TEJA M");
+}
+
+function Table(){
+    let tbl = document.createElement('Table');
+    tbl.setAttribute('class', 'tablebdy')
+     
+}
+
+//When i will click on add table it should come with table rows columns and table heading
+
         // Hoisting Day 1
        call()  //Hello Javascript
         function call(){
@@ -242,6 +265,23 @@ let arrayione = "Sai Teja  M";
 let arraytwo = "Software Engineer";
 console.log(...arrayione, ...arraytwo);
 console.log(arrayione+arraytwo);
+
+const myVehicle = {
+  brand: 'Ford',
+  model: 'Mustang',
+  color: 'red'
+}
+
+const updateMyVehicle = {
+  type: 'car',
+  year: 2021, 
+  color: 'yellow'
+}
+
+const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+
+// Check the result object in the console:
+console.log(myUpdatedVehicle);
 
 //Rest Operator
 let destructr = [4, 5, 55, 66, 77, 88, 99, 19];
