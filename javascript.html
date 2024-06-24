@@ -5,13 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .tablebdy{
-            border: 2px solid black;
-        }
+
+table {
+    width: 100%;
+    border: 1px solid #ddd; /* Border for the whole table */
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid #ddd; /* Border for each cell */
+    padding: 8px;
+  }
     </style>
 </head>
 <body>
     <h3>Javascript Hoisting</h3>
+    <table id="mytbl">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Sai</td>
+            <td>aacaca2gmail.com</td>
+        </tr>
+    </table>
     <button onclick="Addfunction()">Simple Function</button>
 
     <!-- //When i will click on add table it should come with table rows columns and table heading -->
@@ -24,9 +42,10 @@ function Addfunction(){
 }
 
 function Table(){
-    let tbl = document.createElement('Table');
-    tbl.setAttribute('class', 'tablebdy')
-     
+    var table = document.getElementById('mytbl');
+    var row = table.insertRow(-1);
+    var cell2 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
 }
 
 //When i will click on add table it should come with table rows columns and table heading
