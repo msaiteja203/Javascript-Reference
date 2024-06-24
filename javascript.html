@@ -1,319 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      table {
+        width: 100%;
+        border: 1px solid #ddd; /* Border for the whole table */
+        border-collapse: collapse;
+      }
 
-table {
-    width: 100%;
-    border: 1px solid #ddd; /* Border for the whole table */
-    border-collapse: collapse;
-  }
-
-  th, td {
-    border: 1px solid #ddd; /* Border for each cell */
-    padding: 8px;
-  }
+      th,
+      td {
+        border: 1px solid #ddd; /* Border for each cell */
+        padding: 8px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h3>Javascript Hoisting</h3>
     <table id="mytbl">
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-        <tr>
-            <td>Sai</td>
-            <td>aacaca2gmail.com</td>
-        </tr>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+      <tr>
+        <td>Sai</td>
+        <td>aacaca2gmail.com</td>
+      </tr>
     </table>
+
+    <input type="text" id="nameInput" placeholder="Enter Name" />
+    <input type="text" id="emailInput" placeholder="Enter Email" />
     <button onclick="Addfunction()">Simple Function</button>
 
     <!-- //When i will click on add table it should come with table rows columns and table heading -->
-<button onclick="Table()">Add Table</button>
+    <button onclick="Table()">Add Table</button>
     <script>
-function Addfunction(){
-    console.log("Sai Teja M");
-    document.write("SAI TEJA M");
-    alert("SAI TEJA M");
-}
+      function Addfunction() {
+        console.log("Sai Teja M");
+        document.write("SAI TEJA M");
+        alert("SAI TEJA M");
+      }
 
-function Table(){
-    var table = document.getElementById('mytbl');
-    var row = table.insertRow(-1);
-    var cell2 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-}
+      function Table() {
+        var name = document.getElementById("nameInput").value;
+        var email = document.getElementById("emailInput").value;
 
-//When i will click on add table it should come with table rows columns and table heading
+        var table = document.getElementById("mytbl");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = name;
+        cell2.innerHTML = email;
 
-        // Hoisting Day 1
-       call()  //Hello Javascript
-        function call(){
-            console.log("Hello Javascript")
+        // Clear input fields after adding row
+        document.getElementById("nameInput").value = "";
+        document.getElementById("emailInput").value = "";
+      }
+
+      //When i will click on add table it should come with table rows columns and table heading
+
+      // Hoisting Day 1
+      call(); //Hello Javascript
+      function call() {
+        console.log("Hello Javascript");
+      }
+      call(); //Hello Javascript
+
+      // --------------------
+      console.log(a); //undefined
+      var a =
+        "If we call a variable before it is declared we will get a undefined";
+      console.log(a); //If we call a variable before it is declared we will get a undefined
+      //--------------------------
+      // console.log(b) //error //first comment this line no 23 and check the output
+      let b = "Javascript";
+      console.log(b); //Javascript
+      //-----------------
+      repeat(); //First print this
+      //repeatonce(); //reference error
+      function repeat() {
+        repeatonce(); //second function
+        console.log("First print this");
+
+        function repeatonce() {
+          console.log("second function");
         }
-        call() //Hello Javascript
+      }
 
-        // --------------------
-        console.log(a); //undefined
-        var a = "If we call a variable before it is declared we will get a undefined"
-        console.log(a); //If we call a variable before it is declared we will get a undefined 
-        //--------------------------
-       // console.log(b) //error //first comment this line no 23 and check the output
-        let b = "Javascript";
-        console.log(b) //Javascript
-        //-----------------
-        repeat(); //First print this
-        //repeatonce(); //reference error
-        function repeat(){
-
-            repeatonce(); //second function
-            console.log("First print this");
-
-            function repeatonce(){
-                console.log("second function");
-            }
-        } 
-
-        //------------------
-        console.log(myName); //undefined
-        var myName = "sai teja";
-        console.log(myName); // sai teja
+      //------------------
+      console.log(myName); //undefined
+      var myName = "sai teja";
+      console.log(myName); // sai teja
       //  console.log(Name); //Name is not defined
 
+      //var v/s const v/s let
+      var c = "let var const";
+      var c = "I have done with my work"; //var can be redeclared and updated
+      console.log(c);
 
+      let d = "we can't redeclare let";
+      // let d  = "We can update the let keyword"
+      console.log(d);
 
-        //var v/s const v/s let
-        var c = "let var const"
-        var c = "I have done with my work" //var can be redeclared and updated 
-        console.log(c);
+      ///Array methods
+      //Remove duplicates from array
+      let array1 = [
+        1, 2, 1, 2, 3, 4, 11, 2, 3, 43, 34, 3, 2, 3, 4, 5, 622, 22, 11, 43, 622,
+      ];
 
-        let d = "we can't redeclare let"
-       // let d  = "We can update the let keyword"
-        console.log(d);
+      function removedDup(array1) {
+        return array1.filter((ele, ind) => array1.indexOf(ele) !== ind);
+      }
+      console.log(removedDup(array1)); //it will return the repeated values in output
 
-        ///Array methods
-        //Remove duplicates from array
-        let array1 = [1,2,1,2,3,4,11,2,3,43,34,3,2,3,4,5,622,22,11,43,622];
+      function removeDup(array1) {
+        return array1.filter((elel, inds) => array1.indexOf(elel) == inds);
+      }
+      console.log(removeDup(array1)); //it will return the remaining values after duplicates removed
 
-        function removedDup(array1){
-            return array1.filter((ele, ind) =>
-            array1.indexOf(ele)!== ind)
+      //reverse string
+      function revStr(str) {
+        const string = str.split("").reverse().join(" ");
+        console.log(string);
+      }
+      revStr("Divya Venkata Sai Teja M");
+
+      //removes elements from array
+
+      let arr2 = [1, 2, 3, 4, 5, 6, 7, 5, 4, 3, 2, 1, 2, 1, 1, 1, 1];
+      removeEle = 1;
+      let result = arr2.filter((item) => item !== removeEle);
+      console.log(result);
+
+      //print pattern
+      for (let i = 0; i <= 4; i++) {
+        for (j = 1; j <= i; j++) {
+          document.write(i + " ");
         }
-        console.log(removedDup(array1)); //it will return the repeated values in output
+        document.write("<br/>");
+      }
 
-
-        function removeDup(array1){
-            return array1.filter((elel, inds) =>
-        array1.indexOf(elel) == inds);
-        }
-        console.log(removeDup(array1)); //it will return the remaining values after duplicates removed
-        
-        //reverse string
-        function revStr(str){
-            const string =  str.split('').reverse().join(" ");
-            console.log(string)
-        }
-        revStr("Divya Venkata Sai Teja M");
-
-        //removes elements from array
-
-        let arr2 = [1,2,3,4,5,6,7,5,4,3,2,1,2,1,1,1,1];
-        removeEle = 1;
-        let result =  arr2.filter((item) => 
-    item !== removeEle);
-    console.log(result);
-
-    //print pattern
-    for(let i=0; i<=4; i++){
-        for(j=1; j<=i;j++){
-            document.write(i + " ");
-        }
-        document.write("<br/>")
-    }
-
-    //output
-/* 1
+      //output
+      /* 1
 2 2
 3 3 3
 4 4 4 4
  */
 
- const n = 5;
-for (let i = 1; i <= n; i++) {
-    let str = '';
-    for (let j = 1; j <= i; j++) {
-        str += j + ' ';
-    }
-    console.log(str);
-}
-/* 
+      const n = 5;
+      for (let i = 1; i <= n; i++) {
+        let str = "";
+        for (let j = 1; j <= i; j++) {
+          str += j + " ";
+        }
+        console.log(str);
+      }
+      /* 
     1
 1 2
 1 2 3
 1 2 3 4 
 1 2 3 4 5*/
-    //print biggest number
-    let arr3 = [10,22,3,4,0,5,6,7,8,99,8,7,100,4];
-   const maxVal = (arr3) => {
-    return arr3.reduce(function(prev, cur){
-        return prev>cur?prev:cur;
-    })
-   }
-   console.log(maxVal(arr3));
+      //print biggest number
+      let arr3 = [10, 22, 3, 4, 0, 5, 6, 7, 8, 99, 8, 7, 100, 4];
+      const maxVal = (arr3) => {
+        return arr3.reduce(function (prev, cur) {
+          return prev > cur ? prev : cur;
+        });
+      };
+      console.log(maxVal(arr3));
 
-   //print least number
-   const minVal = (arr3) => {
-    return arr3.reduce(function(prev, cur){
-        return prev < cur? prev:cur;
-    })
-   }
-   console.log(minVal(arr3));
+      //print least number
+      const minVal = (arr3) => {
+        return arr3.reduce(function (prev, cur) {
+          return prev < cur ? prev : cur;
+        });
+      };
+      console.log(minVal(arr3));
 
+      //conditional Statements
+      //if condition
+      let aa = 21;
+      let bb = 18;
+      if (aa > bb) {
+        console.log("Eligible for Driving");
+      }
+      //if else
+      if (aa > bb) {
+        console.log("Eligible for driving");
+      } else {
+        console.log("Not ELigible for driving");
+      }
 
-   //conditional Statements
-   //if condition
-   let aa = 21;
-   let bb = 18;
-   if(aa >  bb){
-    console.log("Eligible for Driving")
-   }
-   //if else
-   if(aa > bb){
-    console.log("Eligible for driving");
-   }else{
-    console.log("Not ELigible for driving");
-   }
+      //switch statement
+      let day;
+      switch (new Date().getDay()) {
+        case 0:
+          day = "Sunday";
+          break;
+        case 1:
+          day = "Monday";
+          break;
+        case 2:
+          day = "Tuesday";
+          break;
+        case 3:
+          day = "Wednesday";
+          break;
+        case 4:
+          day = "Thrusday";
+          break;
+        case 5:
+          day = "Friday";
+          break;
+        case 6:
+          day = "Saturday";
+          break;
+      }
+      console.log(day);
 
-   //switch statement
-   let day;
-   switch(new Date().getDay()){
-    case 0:
-    day = "Sunday";
-    break;
-    case 1:
-    day = "Monday";
-    break;
-    case 2:
-    day = "Tuesday";
-    break;
-    case 3:
-    day = "Wednesday";
-    break;
-    case 4:
-    day = "Thrusday";
-    break;
-    case 5:
-    day = "Friday";
-    break;
-    case 6:
-    day = "Saturday";
-    break;
-   }
-   console.log(day);
+      //FOr loop
+      for (let i = 0; i <= 100; i++) {
+        console.log(i);
+      }
 
-   //FOr loop
-   for(let i=0; i <= 100; i++){
-    console.log(i);
-   }
+      //for loop for array
+      let frlp = [
+        "Maruti Suzuki",
+        "TaTa",
+        "Hundai",
+        "Volvo",
+        "Ford",
+        "Mahindra",
+        "Range Rover",
+        "Mitbushi",
+      ];
+      for (let j = 0; j < frlp.length; j++) {
+        console.log(frlp[j]);
+      }
 
-   //for loop for array
-   let frlp = ["Maruti Suzuki","TaTa","Hundai","Volvo","Ford","Mahindra","Range Rover","Mitbushi"];
-   for(let j = 0; j < frlp.length ; j++){
-    console.log(frlp[j]);
-   } 
+      //let frlp = ["Maruti Suzuki", "Tata", "Hyundai", "Volvo", "Ford", "Mahindra", "Range Rover", "Mitsubishi"];
 
-   //let frlp = ["Maruti Suzuki", "Tata", "Hyundai", "Volvo", "Ford", "Mahindra", "Range Rover", "Mitsubishi"];
+      // for (let i = 0; i < frlp.length; i++) {
+      //     console.log(frlp[i]);
+      // }
+      //For in Loop
 
-// for (let i = 0; i < frlp.length; i++) {
-//     console.log(frlp[i]);
-// }
-//For in Loop
+      const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 30,
+      };
 
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 30
-};
+      for (let key in person) {
+        console.log(key + ": " + person[key]);
+      }
 
-for (let key in person) {
-  console.log(key + ": " + person[key]);
-}
+      const srno = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi"];
+      for (let i in srno) {
+        console.log(i);
+      }
 
-const srno = ["sai","teja","divya","venkatesh","chandu","Vamshi"];
-for(let i in srno){
-    console.log(i);
-}
+      //for of loop it will calls every item
+      const srnoo = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi"];
+      for (let jj of srnoo) {
+        console.log(jj);
+      }
 
-//for of loop it will calls every item
-const srnoo = ["sai","teja","divya","venkatesh","chandu","Vamshi"];
-for(let jj of srnoo){
-    console.log(jj);
-}
+      const srnone = ["DivyaVenkataSaiTejaM"];
+      for (let ii of srnone) {
+        console.log(ii);
+      }
+      const srnonee = "DivyaVenkataSaiTejaM";
+      for (let char of srnonee) {
+        console.log(char);
+      }
+      const str = "hello";
 
-const srnone = ["DivyaVenkataSaiTejaM"];
-for(let ii of srnone){
-    console.log(ii);
-}
-const srnonee = "DivyaVenkataSaiTejaM";
-for(let char of srnonee){
-    console.log(char);
-}
-const str = "hello";
+      for (let char of str) {
+        console.log(char);
+      }
 
-for (let char of str) {
-  console.log(char);
-}
+      //For each loop (it will calls every array item)
+      const numbers = [1, 2, 3, 4, 5];
 
-//For each loop (it will calls every array item)
-const numbers = [1, 2, 3, 4, 5];
+      numbers.forEach((number) => {
+        console.log(number);
+      });
 
-numbers.forEach(number => {
-  console.log(number);
-});
+      ///this.el
+      //this. return window element
 
-///this.el
-//this. return window element
+      //Spread operator
 
-//Spread operator 
+      let arrayione = "Sai Teja  M";
+      let arraytwo = "Software Engineer";
+      console.log(...arrayione, ...arraytwo);
+      console.log(arrayione + arraytwo);
 
-let arrayione = "Sai Teja  M";
-let arraytwo = "Software Engineer";
-console.log(...arrayione, ...arraytwo);
-console.log(arrayione+arraytwo);
+      const myVehicle = {
+        brand: "Ford",
+        model: "Mustang",
+        color: "red",
+      };
 
-const myVehicle = {
-  brand: 'Ford',
-  model: 'Mustang',
-  color: 'red'
-}
+      const updateMyVehicle = {
+        type: "car",
+        year: 2021,
+        color: "yellow",
+      };
 
-const updateMyVehicle = {
-  type: 'car',
-  year: 2021, 
-  color: 'yellow'
-}
+      const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
 
-const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+      // Check the result object in the console:
+      console.log(myUpdatedVehicle);
 
-// Check the result object in the console:
-console.log(myUpdatedVehicle);
+      //Rest Operator
+      let destructr = [4, 5, 55, 66, 77, 88, 99, 19];
+      let [p, q, r, ...rest] = destructr;
+      console.log(p, q, r, ...rest);
+      //Destructuring
 
-//Rest Operator
-let destructr = [4, 5, 55, 66, 77, 88, 99, 19];
-let [p,q,r, ...rest] = destructr;
-console.log(p,q,r, ...rest);
-//Destructuring
+      let destruct = [4, 5];
+      let [aaaa, bbbb] = destruct;
+      console.log(aaaa, bbbb);
+    </script>
 
-let destruct = [4, 5];
-let [aaaa, bbbb] = destruct;
-console.log(aaaa, bbbb)
-   </script>
-
-   <!-- 
+    <!-- 
 Spread operator                                                                Rest Opearator
 Uses three dots (...) before an iterable object	                         Uses three dots (...) before a variable name
 Use Case	Used to expand elements of an iterable	                    Used to gather remaining elements into an array
@@ -323,8 +339,5 @@ Use in Function Calls	myFunction(...args);	                                myFun
 Use in Array Literals	[...array1, ...array2];                    	[first, second, ...rest] = [1, 2, 3, 4, 5];
 
    -->
-</body>
+  </body>
 </html>
-
-
-
