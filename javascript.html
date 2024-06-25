@@ -277,6 +277,7 @@
       const srnonee = "DivyaVenkataSaiTejaM";
       for (let char of srnonee) {
         console.log(char);
+        console.log("for of loop");
       }
       const str = "hello";
 
@@ -327,6 +328,66 @@
       let destruct = [4, 5];
       let [aaaa, bbbb] = destruct;
       console.log(aaaa, bbbb);
+
+      //index of
+      let indof = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi"];
+      let index = indof.indexOf("sai");
+      console.log(index); //it will return the index value
+
+      //join
+      let jon = [1, 2, 3, 4, 5, 6];
+      console.log(jon.join("/")); // it will join the every element
+
+      //lastindexOF
+      let lstindof = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi", "sai"];
+      let lstof = lstindof.lastIndexOf("divya");
+      document.write("lastindexof : ", lstof); // it wil return the output by reading from right to left
+
+      //pop
+      let popp = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi", "sai"];
+      console.log(popp.pop('sai'));
+      console.log(popp); //pop i will remove the last element from array
+
+      let pshh = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi", "sai"];
+      console.log(pshh.push("mango"));
+      console.log(pshh); //push is gone add a elememnt at the last of an array
+
+      //reverse
+
+      let revrs = [1, 2, 3, 4, 5, 6, 7, 5, 4, 3, 2, 1, 2, 1, 1, 1, 1];
+      console.log(revrs.reverse());
+
+      //shift ---- removes the first elemnt
+      let shft = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi", "sai"];
+      console.log(shft.shift());
+      console.log(shft);
+
+         //unshift -- it adds the element at the first position
+         console.log(shft.unshift("first sai"));
+         console.log("unshift", shft);
+
+      //slice -- we have to give two parameters where we have to begin and end.
+      let slc = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi", "sai"];
+      console.log(slc.slice(2,4)); 
+
+      //sort ---
+      
+      let srt = ["sai", "teja", "divya", "venkatesh", "chandu", "vamshi", "sai"];
+      console.log("sort : ", srt.sort());
+
+      //splice -- we can remove elememt and in removed place we can add new element
+
+      let splc = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi", "sai"];
+      console.log(splc.splice(3 , 1 , 'mdvs', 'oracale'));
+      console.log(splc);
+
+      //tostring --toString() method returns a string with all array values
+      let tostr = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi", "sai"];
+      console.log(tostr.toString());
+
+      //valueof --- it returns the primitive values
+      let vlm = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi", "sai"];
+      console.log(vlm.valueOf());
     </script>
 
     <!-- 
