@@ -19,6 +19,7 @@
     </style>
   </head>
   <body>
+    <p id="demo"></p>
     <h3>Javascript Hoisting</h3>
     <table id="mytbl">
       <tr>
@@ -388,6 +389,42 @@
       //valueof --- it returns the primitive values
       let vlm = ["sai", "teja", "divya", "venkatesh", "chandu", "Vamshi", "sai"];
       console.log(vlm.valueOf());
+
+      //Basic operatot
+      //Grouping-----
+      function gfg() {
+    // 5 * 5 + 5
+    // 25+5
+    // 30
+    let value = 5 * 5 + 5;
+    console.log("Without grouping operator: " + value);
+
+    // 5 * (5 + 5)
+    // 5*10
+    // 50
+    let value1 = 5 * (5 + 5);
+    console.log("With grouping operator: " + value1);
+}
+gfg(); 
+
+//--------------------------------------------//--------------------------------------------//
+
+let m = 7;
+if (m % 2 === 0) {
+  console.log(m + " is even");
+} else {
+  console.log(m + " is odd");
+}
+
+//<p>parseInt() parses a string and returns the first integer:</p>
+document.getElementById("demo").innerHTML =
+parseInt("10") + "<br>" +
+parseInt("10.00") + "<br>" +
+parseInt("10.33") + "<br>" +
+parseInt("66") + "<br>" +
+parseInt("   60   ") + "<br>" +
+parseInt("40 years") + "<br>" +
+parseInt("He was 40");
     </script>
 
     <!-- 
